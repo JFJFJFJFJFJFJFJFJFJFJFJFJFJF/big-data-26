@@ -1,3 +1,11 @@
 services:
-  hello:
-    image: hello-world:latest
+  mongodb:
+    image: mongo:7
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
